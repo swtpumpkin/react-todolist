@@ -5,10 +5,20 @@ class TodoItemList extends Component {
   render() {
     const { todos, onToggle, onRemove } = this.props;
 
+    const todoList = todos.map(
+      (todo) => (
+        <TodoItem
+          {...todo}
+          onToggle={onToggle}
+          onRemove={onRemove}
+          key={todo.id}
+        />
+      )
+    );
+    
     return (
       <div>
-        <TodoItem text="안녕"/>
-        <TodoItem text="리엑트"/>
+        {todoList}
       </div>
     );
   };

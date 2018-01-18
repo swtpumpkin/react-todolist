@@ -28,7 +28,8 @@ class App extends Component {
       todos: todos.concat({
         id: this.id++,
         text: input,
-        checked: false
+        checked: false,
+        fontColor: ''
       })
     });
   }
